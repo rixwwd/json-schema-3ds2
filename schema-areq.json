@@ -188,12 +188,14 @@
         "browserScreenHeight": {
             "type": "string",
             "minLength": 1,
-            "maxLength": 6
+            "maxLength": 6,
+            "pattern": "^\\d+{1,6}$"
         },
         "browserScreenWidth": {
             "type": "string",
             "minLength": 1,
-            "maxLength": 6
+            "maxLength": 6,
+            "pattern": "^\\d+{1,6}$"
         },
         "browserTZ": {
             "type": "string",

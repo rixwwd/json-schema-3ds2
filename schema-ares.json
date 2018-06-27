@@ -44,7 +44,7 @@
             }
         },
         "acsSignedContent": {
-            "type": "object"
+            "type": "string"
         },
         "acsTransID": {
             "type": "string",
