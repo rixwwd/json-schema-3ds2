@@ -1,0 +1,64 @@
+{
+    "type": "object",
+    "required": [
+        "threeDSServerRefNumber",
+        "threeDSServerTransID",
+        "messageType",
+        "messageVersion"
+    ],
+    "properties": {
+        "threeDSServerRefNumber": {
+            "type": "string",
+            "maxLength": 32
+        },
+        "threeDSServerOperatorID": {
+            "type": "string",
+            "maxLength": 32
+        },
+        "threeDSServerTransID": {
+            "type": "string",
+            "maxLength": 36,
+            "pattern": "[0-9a-h]{8}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{12}"
+        },
+        "messageExtension": {
+            "type": "array",
+            "maxItems": 10,
+            "items": {
+                "required": [
+                    "criticalityIndicator",
+                    "data",
+                    "id",
+                    "name"
+                ],
+                "properties": {
+                    "criticalityIndicator": {
+                        "type": "boolean"
+                    },
+                    "data": {
+                        "type": "object"
+                    },
+                    "id": {
+                        "type": "string",
+                        "maxLength": 64
+                    },
+                    "name": {
+                        "type": "string",
+                        "maxLength": 64
+                    }
+                }
+            }
+        },
+        "messageType": {
+            "type": "string",
+            "const": "PReq"
+        },
+        "messageVersion": {
+            "type": "string",
+            "const": "2.1.0"
+        },
+        "serialNum": {
+            "type": "string",
+            "maxLength": 20
+        }
+    }
+}
