@@ -1,5 +1,11 @@
 {
     "type": "object",
+    "required": [
+        "threeDSServerTransID",
+        "acsTransID",
+        "messageType",
+        "messageVersion"
+    ],
     "properties": {
         "threeDSServerTransID": {
             "type": "string",
@@ -66,7 +72,7 @@
                 "type": "object",
                 "patternProperties": {
                     "^.{1,45}$": {
-                        "type":"string",
+                        "type": "string",
                         "maxLength": 45
                     }
                 }

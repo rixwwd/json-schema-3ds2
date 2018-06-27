@@ -1,5 +1,13 @@
 {
     "type": "object",
+    "required": [
+        "threeDSServerTransID",
+        "acsTransID",
+        "dsTransID",
+        "messageType",
+        "messageVersion",
+        "resultsStatus"
+    ],
     "properties": {
         "threeDSServerTransID": {
             "type": "string",

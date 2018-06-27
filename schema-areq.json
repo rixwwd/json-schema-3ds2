@@ -1,5 +1,17 @@
 {
     "type": "object",
+    "required": [
+        "threeDSRequestorID",
+        "threeDSRequestorName",
+        "threeDSRequestorURL",
+        "threeDSServerRefNumber",
+        "threeDSServerTransID",
+        "acctNumber",
+        "deviceChannel",
+        "messageCategory",
+        "messageType",
+        "messageVersion"
+    ],
     "properties": {
         "threeDSCompInd": {
             "type": "string",

@@ -1,5 +1,9 @@
 {
     "type": "object",
+    "required": [
+        "threeDSServerTransID",
+        "acsTransID"
+    ],
     "properties": {
         "threeDSServerTransID": {
             "type": "string",

@@ -1,5 +1,13 @@
 {
     "type": "object",
+    "required": [
+        "threeDSServerTransID",
+        "acsTransID",
+        "interactionCounter",
+        "messageCategory",
+        "messageType",
+        "messageVersion"
+    ],
     "properties": {
         "threeDSServerTransID": {
             "type": "string",
@@ -13,6 +21,10 @@
         },
         "acsRenderingType": {
             "type": "object",
+            "required": [
+                "acsInterface",
+                "acsUiTemplate"
+            ],
             "properties": {
                 "acsInterface": {
                     "type": "string",
