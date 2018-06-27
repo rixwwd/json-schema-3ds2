@@ -1,0 +1,172 @@
+{
+    "type": "object",
+    "properties": {
+        "threeDSServerTransID": {
+            "type": "string",
+            "maxLength": 36,
+            "pattern": "[0-9a-h]{8}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{12}"
+        },
+        "acsChallengeMandated": {
+            "type": "string",
+            "enum": [
+                "Y",
+                "N"
+            ]
+        },
+        "acsOperatorID": {
+            "type": "string",
+            "maxLength": 32
+        },
+        "acsReferenceNumber": {
+            "type": "string",
+            "maxLength": 32
+        },
+        "acsRenderingType": {
+            "type": "object",
+            "properties": {
+                "acsInterface": {
+                    "type": "string",
+                    "enum": [
+                        "01",
+                        "02"
+                    ]
+                },
+                "acsUiTemplate": {
+                    "type": "string",
+                    "enum": [
+                        "01",
+                        "02",
+                        "03",
+                        "04",
+                        "05"
+                    ]
+                }
+            }
+        },
+        "acsSignedContent": {
+            "type": "object"
+        },
+        "acsTransID": {
+            "type": "string",
+            "maxLength": 36,
+            "pattern": "[0-9a-h]{8}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{12}"
+        },
+        "acsURL": {
+            "type": "string",
+            "maxLength": 2048,
+            "format": "uri"
+        },
+        "authenticationType": {
+            "type": "string",
+            "enum": [
+                "01",
+                "02",
+                "03"
+            ]
+        },
+        "authenticationValue": {
+            "type": "string",
+            "minLength": 28,
+            "maxLength": 28
+        },
+        "broadInfo": {
+            "type": "object"
+        },
+        "cardholderInfo": {
+            "type": "string",
+            "maxLength": 128
+        },
+        "dsReferenceNumber": {
+            "type": "string",
+            "maxLength": 32
+        },
+        "dsTransID": {
+            "type": "string",
+            "maxLength": 36,
+            "pattern": "[0-9a-h]{8}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{12}"
+        },
+        "eci": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 2
+        },
+        "messageExtension": {
+            "type": "array",
+            "maxItems": 10,
+            "items": {
+                "required": [
+                    "criticalityIndicator",
+                    "data",
+                    "id",
+                    "name"
+                ],
+                "properties": {
+                    "criticalityIndicator": {
+                        "type": "boolean"
+                    },
+                    "data": {
+                        "type": "object"
+                    },
+                    "id": {
+                        "type": "string",
+                        "maxLength": 64
+                    },
+                    "name": {
+                        "type": "string",
+                        "maxLength": 64
+                    }
+                }
+            }
+        },
+        "messageType": {
+            "type": "string",
+            "const": "ARes"
+        },
+        "messageVersion": {
+            "type": "string",
+            "const": "2.1.0"
+        },
+        "sdkTransID": {
+            "type": "string",
+            "maxLength": 36,
+            "pattern": "[0-9a-h]{8}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{12}"
+        },
+        "transStatus": {
+            "type": "string",
+            "enum": [
+                "Y",
+                "N",
+                "U",
+                "A",
+                "C",
+                "R"
+            ]
+        },
+        "transStatusReason": {
+            "type": "string",
+            "enum": [
+                "01",
+                "02",
+                "03",
+                "04",
+                "05",
+                "06",
+                "07",
+                "08",
+                "09",
+                "10",
+                "11",
+                "12",
+                "13",
+                "14",
+                "15",
+                "16",
+                "17",
+                "18",
+                "19",
+                "20",
+                "21"
+            ]
+        }
+    }
+}

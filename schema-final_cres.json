@@ -1,0 +1,78 @@
+{
+    "type": "object",
+    "properties": {
+        "threeDSServerTransID": {
+            "type": "string",
+            "maxLength": 36,
+            "pattern": "[0-9a-h]{8}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{12}"
+        },
+        "acsCounterAtoS": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 3
+        },
+        "acsTransID": {
+            "type": "string",
+            "maxLength": 36,
+            "pattern": "[0-9a-h]{8}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{12}"
+        },
+        "challengeCompletionInd": {
+            "type": "string",
+            "enum": [
+                "Y",
+                "N"
+            ]
+        },
+        "messageExtension": {
+            "type": "array",
+            "maxItems": 10,
+            "items": {
+                "required": [
+                    "criticalityIndicator",
+                    "data",
+                    "id",
+                    "name"
+                ],
+                "properties": {
+                    "criticalityIndicator": {
+                        "type": "boolean"
+                    },
+                    "data": {
+                        "type": "object"
+                    },
+                    "id": {
+                        "type": "string",
+                        "maxLength": 64
+                    },
+                    "name": {
+                        "type": "string",
+                        "maxLength": 64
+                    }
+                }
+            }
+        },
+        "messageType": {
+            "type": "string",
+            "const": "CRes"
+        },
+        "messageVersion": {
+            "const": "2.1.0"
+        },
+        "sdkTransID": {
+            "type": "string",
+            "maxLength": 36,
+            "pattern": "[0-9a-h]{8}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{12}"
+        },
+        "transStatus": {
+            "type": "string",
+            "enum": [
+                "Y",
+                "N",
+                "U",
+                "A",
+                "C",
+                "R"
+            ]
+        }
+    }
+}

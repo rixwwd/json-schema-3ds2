@@ -1,0 +1,102 @@
+{
+    "type": "object",
+    "properties": {
+        "threeDSServerTransID": {
+            "type": "string",
+            "maxLength": 36,
+            "pattern": "[0-9a-h]{8}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{12}"
+        },
+        "acsTransID": {
+            "type": "string",
+            "maxLength": 36,
+            "pattern": "[0-9a-h]{8}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{12}"
+        },
+        "challengeCancel": {
+            "type": "string",
+            "enum": [
+                "01",
+                "02",
+                "03",
+                "04",
+                "05",
+                "06",
+                "07"
+            ]
+        },
+        "challengeDataEntry": {
+            "type": "string",
+            "maxLength": 45
+        },
+        "challengeHTMLDataEntry": {
+            "type": "string",
+            "maxLength": 256
+        },
+        "challengeWindowSize": {
+            "type": "string",
+            "enum": [
+                "01",
+                "02",
+                "03",
+                "04",
+                "05"
+            ]
+        },
+        "messageExtension": {
+            "type": "array",
+            "maxItems": 10,
+            "items": {
+                "required": [
+                    "criticalityIndicator",
+                    "data",
+                    "id",
+                    "name"
+                ],
+                "properties": {
+                    "criticalityIndicator": {
+                        "type": "boolean"
+                    },
+                    "data": {
+                        "type": "object"
+                    },
+                    "id": {
+                        "type": "string",
+                        "maxLength": 64
+                    },
+                    "name": {
+                        "type": "string",
+                        "maxLength": 64
+                    }
+                }
+            }
+        },
+        "messageType": {
+            "type": "string",
+            "const": "CReq"
+        },
+        "messageVersion": {
+            "type": "string",
+            "const": "2.1.0"
+        },
+        "oobContinue": {
+            "type": "boolean",
+            "const": true
+        },
+        "resendChallenge": {
+            "type": "string",
+            "enum": [
+                "Y",
+                "N"
+            ]
+        },
+        "sdkTransID": {
+            "type": "string",
+            "maxLength": 36,
+            "pattern": "[0-9a-h]{8}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{12}"
+        },
+        "sdkCounterStoA": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 3
+        }
+    }
+}

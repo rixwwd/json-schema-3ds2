@@ -1,0 +1,91 @@
+{
+    "type": "object",
+    "required": [
+        "errorCode",
+        "errorComponent",
+        "errorDescription",
+        "errorDetail",
+        "messageType",
+        "messageVersion"
+    ],
+    "properties": {
+        "threeDSServerTransID": {
+            "maxLength": 36,
+            "pattern": "[0-9a-h]{8}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{12}"
+        },
+        "acsTransID": {
+            "maxLength": 36,
+            "pattern": "[0-9a-h]{8}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{12}"
+        },
+        "dsTransID": {
+            "maxLength": 36,
+            "pattern": "[0-9a-h]{8}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{12}"
+        },
+        "errorCode": {
+            "type": "string",
+            "enum": [
+                "101",
+                "102",
+                "103",
+                "201",
+                "202",
+                "203",
+                "204",
+                "301",
+                "302",
+                "303",
+                "304",
+                "305",
+                "306",
+                "307",
+                "402",
+                "403",
+                "404",
+                "405"
+            ]
+        },
+        "errorComponent": {
+            "type": "string",
+            "enum": [
+                "C",
+                "S",
+                "D",
+                "A"
+            ]
+        },
+        "errorDescription": {
+            "type": "string",
+            "maxLength": 2048
+        },
+        "errorDetail": {
+            "type": "string",
+            "maxLength": 2048
+        },
+        "errorMessageType": {
+            "type": "string",
+            "enum": [
+                "AReq",
+                "ARes",
+                "CReq",
+                "CRes",
+                "RReq",
+                "RRes",
+                "PReq",
+                "PRes",
+                "Erro"
+            ]
+        },
+        "messageType": {
+            "type": "string",
+            "const": "Erro"
+        },
+        "messageVersion": {
+            "type": "string",
+            "const": "2.1.0"
+        },
+        "sdkTransID": {
+            "maxLength": 36,
+            "pattern": "[0-9a-h]{8}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{12}"
+        }
+    }
+}

@@ -1,0 +1,64 @@
+{
+    "type": "object",
+    "properties": {
+        "threeDSServerTransID": {
+            "type": "string",
+            "maxLength": 36,
+            "pattern": "[0-9a-h]{8}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{12}"
+        },
+        "acsTransID": {
+            "type": "string",
+            "maxLength": 36,
+            "pattern": "[0-9a-h]{8}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{12}"
+        },
+        "dsTransID": {
+            "type": "string",
+            "maxLength": 36,
+            "pattern": "[0-9a-h]{8}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{12}"
+        },
+        "messageExtension": {
+            "type": "array",
+            "maxItems": 10,
+            "items": {
+                "required": [
+                    "criticalityIndicator",
+                    "data",
+                    "id",
+                    "name"
+                ],
+                "properties": {
+                    "criticalityIndicator": {
+                        "type": "boolean"
+                    },
+                    "data": {
+                        "type": "object"
+                    },
+                    "id": {
+                        "type": "string",
+                        "maxLength": 64
+                    },
+                    "name": {
+                        "type": "string",
+                        "maxLength": 64
+                    }
+                }
+            }
+        },
+        "messageType": {
+            "type": "string",
+            "const": "RRes"
+        },
+        "messageVersion": {
+            "type": "string",
+            "const": "2.1.0"
+        },
+        "resultsStatus": {
+            "type": "string",
+            "enum": [
+                "01",
+                "02",
+                "03"
+            ]
+        }
+    }
+}

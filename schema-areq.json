@@ -1,0 +1,699 @@
+{
+    "type": "object",
+    "properties": {
+        "threeDSCompInd": {
+            "type": "string",
+            "enum": [
+                "Y",
+                "N",
+                "U"
+            ]
+        },
+        "threeDSRequestorAuthenticationInd": {
+            "type": "string",
+            "enum": [
+                "01",
+                "02",
+                "03",
+                "04",
+                "05",
+                "06"
+            ]
+        },
+        "threeDSRequestorAuthenticationInfo": {
+            "type": "object",
+            "properties": {
+                "threeDSReqAuthData": {
+                    "type": "string",
+                    "maxLength": 2048
+                },
+                "threeDSReqAuthMethod": {
+                    "type": "string",
+                    "enum": [
+                        "01",
+                        "02",
+                        "03",
+                        "04",
+                        "05",
+                        "06"
+                    ]
+                },
+                "threeDSReqAuthTimestamp": {
+                    "type": "string",
+                    "format": "yymmddhhmm"
+                }
+            }
+        },
+        "threeDSRequestorChallengeInd": {
+            "type": "string",
+            "enum": [
+                "01",
+                "02",
+                "03",
+                "04"
+            ]
+        },
+        "threeDSRequestorID": {
+            "type": "string",
+            "maxLength": 35
+        },
+        "threeDSRequestorName": {
+            "type": "string",
+            "maxLength": 40
+        },
+        "threeDSRequestorPriorAuthenticationInfo": {
+            "type": "object",
+            "propertyes": {
+                "threeDSReqPriorAuthData": {
+                    "type": "string"
+                },
+                "threeDSReqPriorAuthMethod": {
+                    "type": "string",
+                    "enum": [
+                        "01",
+                        "02",
+                        "03",
+                        "04"
+                    ]
+                },
+                "threeDSReqPriorAuthTimestamp": {
+                    "type": "string",
+                    "format": "yymmddhhmm"
+                },
+                "threeDSReqPriorRef": {
+                    "type": "string",
+                    "maxLength": 36
+                }
+            }
+        },
+        "threeDSRequestorURL": {
+            "type": "string",
+            "maxLength": 2048,
+            "format": "uri"
+        },
+        "threeDSServerRefNumber": {
+            "type": "string",
+            "maxLength": 32
+        },
+        "threeDSServerOperatorID": {
+            "type": "string",
+            "maxLength": 32
+        },
+        "threeDSServerTransID": {
+            "type": "string",
+            "maxLength": 36,
+            "pattern": "[0-9a-h]{8}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{12}"
+        },
+        "threeDSServerURL": {
+            "type": "string",
+            "maxLength": 2048,
+            "format": "uri"
+        },
+        "threeRIInd": {
+            "type": "string",
+            "enum": [
+                "01",
+                "02",
+                "03",
+                "04",
+                "05",
+                "06"
+            ]
+        },
+        "acctType": {
+            "type": "string",
+            "enum": [
+                "01",
+                "02",
+                "03",
+                "04"
+            ]
+        },
+        "acquirerBIN": {
+            "type": "string",
+            "maxLength": 11
+        },
+        "acquirerMerchantID": {
+            "type": "string",
+            "maxLength": 35
+        },
+        "addrMatch": {
+            "type": "string",
+            "enum": [
+                "Y",
+                "N"
+            ]
+        },
+        "broadInfo": {
+            "type": "object"
+        },
+        "browserAcceptHeader": {
+            "type": "string",
+            "maxLength": 2048
+        },
+        "browserIP": {
+            "type": "string",
+            "maxLength": 45,
+            "anyOf": [
+                {
+                    "format": "ipv4"
+                },
+                {
+                    "format": "ipv6"
+                }
+            ]
+        },
+        "browserJavaEnabled": {
+            "type": "boolean"
+        },
+        "browserLanguage": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 8
+        },
+        "browserColorDepth": {
+            "type": "string",
+            "enum": [
+                "1",
+                "2",
+                "4",
+                "8",
+                "15",
+                "16",
+                "24",
+                "32",
+                "48"
+            ]
+        },
+        "browserScreenHeight": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6
+        },
+        "browserScreenWidth": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6
+        },
+        "browserTZ": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 5
+        },
+        "browserUserAgent": {
+            "type": "string",
+            "maxLength": 2048
+        },
+        "cardExpiryDate": {
+            "type": "string",
+            "format": "yymm"
+        },
+        "acctInfo": {
+            "type": "object",
+            "properties": {
+                "chAccAgeInd": {
+                    "type": "string",
+                    "enum": [
+                        "01",
+                        "02",
+                        "03",
+                        "04",
+                        "05"
+                    ]
+                },
+                "chAccChange": {
+                    "type": "string",
+                    "format": "yymmdd"
+                },
+                "chAccChangeInd": {
+                    "type": "string",
+                    "enum": [
+                        "01",
+                        "02",
+                        "03",
+                        "04"
+                    ]
+                },
+                "chAccDate": {
+                    "type": "string",
+                    "format": "yymmdd"
+                },
+                "chAccPwChange": {
+                    "type": "string",
+                    "format": "yymmdd"
+                },
+                "chAccPwChangeInd": {
+                    "type": "string",
+                    "enum": [
+                        "01",
+                        "02",
+                        "03",
+                        "04",
+                        "05"
+                    ]
+                },
+                "nbPurchaseAccount": {
+                    "type": "string",
+                    "maxLength": 4
+                },
+                "provisionAttemptsDay": {
+                    "type": "string",
+                    "maxLength": 3
+                },
+                "txnActivityDay": {
+                    "type": "string",
+                    "maxLength": 3
+                },
+                "txnActivityYear": {
+                    "type": "string",
+                    "maxLength": 3
+                },
+                "paymentAccAge": {
+                    "type": "string",
+                    "format": "yymmdd"
+                },
+                "paymentAccInd": {
+                    "type": "string",
+                    "enum": [
+                        "01",
+                        "02",
+                        "03",
+                        "04",
+                        "05"
+                    ]
+                },
+                "shipAddressUsage": {
+                    "type": "string",
+                    "format": "yymmdd"
+                },
+                "shipAddressUsageInd": {
+                    "type": "string",
+                    "enum": [
+                        "01",
+                        "02",
+                        "03",
+                        "04"
+                    ]
+                },
+                "shipNameIndicator": {
+                    "type": "string",
+                    "enum": [
+                        "01",
+                        "02"
+                    ]
+                },
+                "suspiciousAccActivity": {
+                    "type": "string",
+                    "enum": [
+                        "01",
+                        "02"
+                    ]
+                }
+            }
+        }
+    },
+    "acctNumber": {
+        "type": "string",
+        "minLength": 13,
+        "maxLength": 19
+    },
+    "acctID": {
+        "type": "string",
+        "maxLength": 64
+    },
+    "billAddrCity": {
+        "type": "string",
+        "maxLength": 50
+    },
+    "billAddrCountry": {
+        "type": "string",
+        "minLength": 3,
+        "maxLength": 3
+    },
+    "billAddrLine1": {
+        "type": "string",
+        "maxLength": 50
+    },
+    "billAddrLine2": {
+        "type": "string",
+        "maxLength": 50
+    },
+    "billAddrLine3": {
+        "type": "string",
+        "maxLength": 50
+    },
+    "billAddrPostCode": {
+        "type": "string",
+        "maxLength": 16
+    },
+    "billAddrState": {
+        "type": "string",
+        "minLength": 3,
+        "maxLength": 3
+    },
+    "email": {
+        "type": "string",
+        "format": "email",
+        "maxLength": 254
+    },
+    "homePhone": {
+        "type": "object",
+        "properties": {
+            "cc": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 3
+            },
+            "subscriber": {
+                "type": "string",
+                "maxLength": 15
+            }
+        }
+    },
+    "mobilePhone": {
+        "type": "object",
+        "properties": {
+            "cc": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 3
+            },
+            "subscriber": {
+                "type": "string",
+                "maxLength": 15
+            }
+        }
+    },
+    "cardholderName": {
+        "type": "string",
+        "minLength": 2,
+        "maxLength": 45
+    },
+    "shipAddrCity": {
+        "type": "string",
+        "maxLength": 50
+    },
+    "shipAddrCountry": {
+        "type": "string",
+        "minLength": 3,
+        "maxLength": 3
+    },
+    "shipAddrLine1": {
+        "type": "string",
+        "maxLength": 50
+    },
+    "shipAddrLine2": {
+        "type": "string",
+        "maxLength": 50
+    },
+    "shipAddrLine3": {
+        "type": "string",
+        "maxLength": 50
+    },
+    "shipAddrPostCode": {
+        "type": "string",
+        "maxLength": 16
+    },
+    "shipAddrState": {
+        "type": "string",
+        "minLength": 3,
+        "maxLength": 3
+    },
+    "workPhone": {
+        "type": "object",
+        "properties": {
+            "cc": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 3
+            },
+            "subscriber": {
+                "type": "string",
+                "maxLength": 15
+            }
+        }
+    },
+    "deviceChannel": {
+        "type": "string",
+        "enum": [
+            "01",
+            "02",
+            "03"
+        ]
+    },
+    "deviceInfo": {
+        "type": "string",
+        "maxLength": 64000
+    },
+    "deviceRenderOptions": {
+        "type": "object",
+        "properties": {
+            "sdkInterface": {
+                "type": "string",
+                "enum": [
+                    "01",
+                    "02",
+                    "03"
+                ]
+            },
+            "sdkUiType": {
+                "type": "string",
+                "enum": [
+                    "01",
+                    "02",
+                    "03",
+                    "04",
+                    "05"
+                ]
+            }
+        }
+    },
+    "dsReferenceNumber": {
+        "type": "string",
+        "maxLength": 32
+    },
+    "dsTransID": {
+        "type": "string",
+        "maxLength": 36,
+        "pattern": "[0-9a-h]{8}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{12}"
+    },
+    "dsURL": {
+        "type": "string",
+        "maxLength": 2048,
+        "format": "uri"
+    },
+    "payTokenInd": {
+        "type": "boolean",
+        "const": true
+    },
+    "purchaseInstalData": {
+        "type": "string",
+        "maxLength": 3
+    },
+    "mcc": {
+        "type": "string",
+        "minLength": 4,
+        "maxLength": 4
+    },
+    "merchantCountryCode": {
+        "type": "string",
+        "minLength": 3,
+        "maxLength": 3
+    },
+    "merchantName": {
+        "type": "string",
+        "maxLength": 40
+    },
+    "merchantRiskIndicator": {
+        "type": "object",
+        "properties": {
+            "deliveryEmailAddress": {
+                "type": "string",
+                "maxLength": 254
+            },
+            "deliveryTimeframe": {
+                "type": "string",
+                "enum": [
+                    "01",
+                    "02",
+                    "03",
+                    "04"
+                ]
+            },
+            "giftCardAmount": {
+                "type": "string",
+                "maxLength": 15
+            },
+            "giftCardCount": {
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 2
+            },
+            "giftCardCurr": {
+                "type": "string",
+                "minLength": 3,
+                "maxLength": 3
+            },
+            "preOrderDate": {
+                "type": "string",
+                "format": "yymmdd"
+            },
+            "preOrderPurchaseInd": {
+                "type": "string",
+                "enum": [
+                    "01",
+                    "02"
+                ]
+            },
+            "reorderItemsInd": {
+                "type": "string",
+                "enum": [
+                    "01",
+                    "02"
+                ]
+            },
+            "shipIndicator": {
+                "type": "string",
+                "enum": [
+                    "01",
+                    "02",
+                    "03",
+                    "04",
+                    "05",
+                    "06",
+                    "07"
+                ]
+            }
+        }
+    },
+    "messageCategory": {
+        "type": "string",
+        "enum": [
+            "01",
+            "02"
+        ]
+    },
+    "messageExtension": {
+        "type": "array",
+        "maxItems": 10,
+        "items": {
+            "required": [
+                "criticalityIndicator",
+                "data",
+                "id",
+                "name"
+            ],
+            "properties": {
+                "criticalityIndicator": {
+                    "type": "boolean"
+                },
+                "data": {
+                    "type": "object"
+                },
+                "id": {
+                    "type": "string",
+                    "maxLength": 64
+                },
+                "name": {
+                    "type": "string",
+                    "maxLength": 64
+                }
+            }
+        }
+    },
+    "messageType": {
+        "type": "string",
+        "const": "AReq"
+    },
+    "messageVersion": {
+        "type": "string",
+        "const": "2.1.0"
+    },
+    "notificationURL": {
+        "type": "string",
+        "format": "uri",
+        "maxLength": 256
+    },
+    "purchaseAmount": {
+        "type": "string",
+        "maxLength": 48
+    },
+    "purchaseCurrency": {
+        "type": "string",
+        "minLength": 3,
+        "maxLength": 3
+    },
+    "purchaseExponent": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 1
+    },
+    "purchaseDate": {
+        "type": "string",
+        "format": "YYYYMMDDHHMMSS"
+    },
+    "recurringExpiry": {
+        "type": "string"
+    },
+    "recurringFrequency": {
+        "type": "string",
+        "format": "YYYYMMDD"
+    },
+    "sdkAppID": {
+        "type": "string",
+        "maxLength": 36
+    },
+    "sdkEncData": {
+        "type": "string",
+        "maxLength": 64000
+    },
+    "sdkEphemPubKey": {
+        "type": "object",
+        "required": [
+            "kty",
+            "crv",
+            "x",
+            "y"
+        ],
+        "properties": {
+            "kty": {
+                "type": "string",
+                "const": "EC"
+            },
+            "crv": {
+                "type": "string",
+                "const": "P-256"
+            },
+            "x": {
+                "type": "string"
+            },
+            "y": {
+                "type": "string"
+            }
+        }
+    },
+    "sdkMaxTimeout": {
+        "type": "string",
+        "minLength": 2,
+        "maxLength": 2
+    },
+    "sdkReferenceNumber": {
+        "type": "string",
+        "maxLength": 32
+    },
+    "sdkTransID": {
+        "type": "string",
+        "maxLength": 36,
+        "pattern": "[0-9a-h]{8}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{12}"
+    },
+    "transType": {
+        "type": "string",
+        "enum": [
+            "01",
+            "03",
+            "10",
+            "11",
+            "28"
+        ]
+    }
+}

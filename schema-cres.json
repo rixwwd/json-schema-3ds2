@@ -1,0 +1,203 @@
+{
+    "type": "object",
+    "properties": {
+        "threeDSServerTransID": {
+            "type": "string",
+            "maxLength": 36,
+            "pattern": "[0-9a-h]{8}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{12}"
+        },
+        "acsCounterAtoS": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 3
+        },
+        "acsTransID": {
+            "type": "string",
+            "maxLength": 36,
+            "pattern": "[0-9a-h]{8}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{12}"
+        },
+        "acsHTML": {
+            "type": "string",
+            "maxLength": 1024000
+        },
+        "acsUiType": {
+            "type": "string",
+            "enum": [
+                "01",
+                "02",
+                "03",
+                "04",
+                "05"
+            ]
+        },
+        "challengeAddInfo": {
+            "type": "string",
+            "maxLength": 256
+        },
+        "challengeCompletionInd": {
+            "type": "string",
+            "enum": [
+                "Y",
+                "N"
+            ]
+        },
+        "challengeInfoHeader": {
+            "type": "string",
+            "maxLength": 45
+        },
+        "challengeInfoLabel": {
+            "type": "string",
+            "maxLength": 45
+        },
+        "challengeInfoText": {
+            "type": "string",
+            "maxLength": 350
+        },
+        "challengeInfoTextIndicator": {
+            "type": "string",
+            "enum": [
+                "Y",
+                "N"
+            ]
+        },
+        "challengeSelectInfo": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "patternProperties": {
+                    "^.{1,45}$": {
+                        "type":"string",
+                        "maxLength": 45
+                    }
+                }
+            }
+        },
+        "expandInfoLabel": {
+            "type": "string",
+            "maxLength": 45
+        },
+        "expandInfoText": {
+            "type": "string",
+            "maxLength": 256
+        },
+        "issuerImage": {
+            "type": "object",
+            "properties": {
+                "medium": {
+                    "type": "string",
+                    "format": "uri",
+                    "maxLength": 2048
+                },
+                "high": {
+                    "type": "string",
+                    "format": "uri",
+                    "maxLength": 2048
+                },
+                "extraHigh": {
+                    "type": "string",
+                    "format": "uri",
+                    "maxLength": 2048
+                }
+            }
+        },
+        "messageExtension": {
+            "type": "array",
+            "maxItems": 10,
+            "items": {
+                "required": [
+                    "criticalityIndicator",
+                    "data",
+                    "id",
+                    "name"
+                ],
+                "properties": {
+                    "criticalityIndicator": {
+                        "type": "boolean"
+                    },
+                    "data": {
+                        "type": "object"
+                    },
+                    "id": {
+                        "type": "string",
+                        "maxLength": 64
+                    },
+                    "name": {
+                        "type": "string",
+                        "maxLength": 64
+                    }
+                }
+            }
+        },
+        "messageType": {
+            "type": "string",
+            "const": "CRes"
+        },
+        "messageVersion": {
+            "type": "string",
+            "const": "2.1.0"
+        },
+        "oobAppURL": {
+            "type": "string"
+        },
+        "oobAppLabel": {
+            "type": "string"
+        },
+        "oobContinueLabel": {
+            "type": "string",
+            "format": "uri",
+            "maxLength": 256
+        },
+        "psImage": {
+            "type": "object",
+            "properties": {
+                "medium": {
+                    "type": "string",
+                    "format": "uri",
+                    "maxLength": 2048
+                },
+                "high": {
+                    "type": "string",
+                    "format": "uri",
+                    "maxLength": 2048
+                },
+                "extraHigh": {
+                    "type": "string",
+                    "format": "uri",
+                    "maxLength": 2048
+                }
+            }
+        },
+        "resendInformationLabel": {
+            "type": "string",
+            "maxLength": 45
+        },
+        "sdkTransID": {
+            "type": "string",
+            "maxLength": 36,
+            "pattern": "[0-9a-h]{8}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{4}-[0-9a-h]{12}"
+        },
+        "submitAuthenticationLabel": {
+            "type": "string",
+            "maxLength": 45
+        },
+        "transStatus": {
+            "type": "string",
+            "enum": [
+                "Y",
+                "N",
+                "U",
+                "A",
+                "C",
+                "R"
+            ]
+        },
+        "whyInfoLabel": {
+            "type": "string",
+            "maxLength": 45
+        },
+        "whyInfoText": {
+            "type": "string",
+            "maxLength": 256
+        }
+    }
+}
