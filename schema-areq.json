@@ -330,7 +330,8 @@
     "billAddrCountry": {
         "type": "string",
         "minLength": 3,
-        "maxLength": 3
+        "maxLength": 3,
+        "pattern": "^\\d{3,3}$"
     },
     "billAddrLine1": {
         "type": "string",
@@ -398,7 +399,8 @@
     "shipAddrCountry": {
         "type": "string",
         "minLength": 3,
-        "maxLength": 3
+        "maxLength": 3,
+        "pattern": "^\\d{3,3}$"
     },
     "shipAddrLine1": {
         "type": "string",
@@ -500,7 +502,8 @@
     "merchantCountryCode": {
         "type": "string",
         "minLength": 3,
-        "maxLength": 3
+        "maxLength": 3,
+        "pattern": "^\\d{3,3}$"
     },
     "merchantName": {
         "type": "string",
@@ -623,7 +626,8 @@
     "purchaseCurrency": {
         "type": "string",
         "minLength": 3,
-        "maxLength": 3
+        "maxLength": 3,
+        "pattern": "^\\d{3,3}$"
     },
     "purchaseExponent": {
         "type": "string",
